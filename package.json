@@ -1,0 +1,35 @@
+{
+  "name": "instafap-api",
+  "version": "1.0.0",
+  "description": "InstaFap REST API",
+  "scripts": {
+    "lint": "standard",
+    "test": "npm run lint && ava"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sharmaz/instafap-api.git"
+  },
+  "author": "Ivan Robles <irae45@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sharmaz/instafap-api/issues"
+  },
+  "homepage": "https://github.com/Sharmaz/instafap-api#readme",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-eslint": "^7.1.0",
+    "standard": "^8.5.0",
+    "test-listen": "^1.0.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.18.0",
+    "micro": "^4.1.1",
+    "request": "^2.78.0",
+    "request-promise": "^4.1.1",
+    "uuid-base62": "^0.1.0"
+  }
+}
