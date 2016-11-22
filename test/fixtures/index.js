@@ -24,5 +24,15 @@ export default {
       this.getImage(),
       this.getImage()
     ]
+  },
+  getUser () {
+    return {
+      id: '20085f5f-969d-4bc1-b3df-99e699288311',
+      name: 'Ivan Robles',
+      username: 'elSharmaz',
+      email: 'irae45@instafap.test',
+      password: '1nst4fap',
+      createdAt: new Date().toString()
+    }
   }
 }
