@@ -1,3 +1,4 @@
 export default {
-  db: {}
+  db: {},
+  secret: process.env.INSTAFAP_SECRET || '1nst4fap'
 }
