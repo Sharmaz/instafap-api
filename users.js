@@ -19,8 +19,6 @@ hash.set('POST /', async function saveUser (req, res, params) {
   let user = await json(req)
   await db.connect()
   let created = await db.saveUser(user)
-  await db.disconnect()
-
   delete created.email
   delete created.password
 
@@ -35,7 +33,7 @@ hash.set('GET /:username', async function getUser (req, res, params) {
   delete user.email
   delete user.password
 
-  send(res, 201, user)
+  send(res, 200, user)
 })
 
 export default async function main (req, res) {
@@ -49,6 +47,6 @@ export default async function main (req, res) {
       send(res, 500, { error: e.message })
     }
   } else {
-    send(res, 404, { eror: 'route not found' })
+    send(res, 404, { error: 'route not found' })
   }
 }

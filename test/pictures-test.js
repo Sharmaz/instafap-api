@@ -5,7 +5,7 @@ import micro from 'micro'
 import listen from 'test-listen'
 import request from 'request-promise'
 import pictures from '../pictures'
-import fixtures from './fixtures/'
+import fixtures from './fixtures'
 import utils from '../lib/utils'
 import config from '../config'
 

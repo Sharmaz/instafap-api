@@ -4,7 +4,7 @@ import test from 'ava'
 import micro from 'micro'
 import listen from 'test-listen'
 import request from 'request-promise'
-import fixtures from './fixtures/'
+import fixtures from './fixtures'
 import users from '../users'
 
 test.beforeEach(async t => {
@@ -52,5 +52,5 @@ test('GET /:username', async t => {
   delete user.email
   delete user.password
 
-  t.deepEqual(body, user)
+  t.is(body.username, user.username)
 })

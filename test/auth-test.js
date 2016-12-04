@@ -4,7 +4,7 @@ import test from 'ava'
 import micro from 'micro'
 import listen from 'test-listen'
 import request from 'request-promise'
-import fixtures from './fixtures/'
+import fixtures from './fixtures'
 import auth from '../auth'
 import config from '../config'
 import utils from '../lib/utils'
@@ -30,5 +30,5 @@ test('success POST /', async t => {
 
   let token = await request(options)
   let decoded = await utils.verifyToken(token, config.secret)
-  t.is(decoded.username, user.username)
+  t.is(decoded.userId, user.username)
 })

@@ -16,17 +16,18 @@ if (env === 'test') {
 
 const hash = HttpHash()
 
-hash.set('POST /', async function authenticate (req, res, params) {
+hash.set('POST /', async function saveUser (req, res, params) {
   let credentials = await json(req)
   await db.connect()
   let auth = await db.authenticate(credentials.username, credentials.password)
+  await db.disconnect()
 
   if (!auth) {
     return send(res, 401, { error: 'invalid credentials' })
   }
 
   let token = await utils.signToken({
-    username: credentials.username
+    userId: credentials.username
   }, config.secret)
 
   send(res, 200, token)
@@ -43,6 +44,6 @@ export default async function main (req, res) {
       send(res, 500, { error: e.message })
     }
   } else {
-    send(res, 404, { eror: 'route not found' })
+    send(res, 404, { error: 'route not found' })
   }
 }

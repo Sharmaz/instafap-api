@@ -39,12 +39,12 @@ hash.set('GET /:id', async function getPicture (req, res, params) {
   send(res, 200, image)
 })
 
-hash.set('POST /', async function postPicture (req, res, params) {
+hash.set('POST /', async function postPicture (req, res) {
   let image = await json(req)
 
   try {
     let token = await utils.extractToken(req)
-    let encoded = await utils.verifyToken(token, config.secret)
+    let encoded = await utils.verifyToken(token, config.secret, {})
     if (encoded && encoded.userId !== image.userId) {
       throw new Error('invalid token')
     }
@@ -77,6 +77,6 @@ export default async function main (req, res) {
       send(res, 500, { error: e.message })
     }
   } else {
-    send(res, 404, { eror: 'route not found' })
+    send(res, 404, { error: 'route not found' })
   }
 }

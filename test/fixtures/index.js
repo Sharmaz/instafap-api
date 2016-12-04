@@ -1,14 +1,14 @@
 export default {
   getImage () {
     return {
-      id: '8fc60e7c-3b3c-48e9-a6a7-a5fe4f1fbc31',
-      publicId: '2fNwVYePN8WqqDFvVf7XMN',
+      id: '6a238b19-3ee3-4d5c-acb5-944a3c1fb407',
+      publicId: '3ehqEZvwZByc6hjzgEZU5p',
       userId: 'instafap',
       liked: false,
       likes: 0,
-      src: 'http://instafap.test/2fNwVYePN8WqqDFvVf7XMN.jpg',
+      src: 'http://instafap.test/3ehqEZvwZByc6hjzgEZU5p.jpg',
       description: '#awesome',
-      tags: ['awesome'],
+      tags: [ 'awesome' ],
       createdAt: new Date().toString()
     }
   },
@@ -27,7 +27,7 @@ export default {
   },
   getUser () {
     return {
-      id: '20085f5f-969d-4bc1-b3df-99e699288311',
+      id: 'f632db90-d6bf-46f0-9fb1-4eb6912cbdb4',
       name: 'Ivan Robles',
       username: 'elSharmaz',
       email: 'irae45@instafap.test',
