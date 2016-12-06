@@ -2,6 +2,7 @@
 
 import HttpHash from 'http-hash'
 import { send, json } from 'micro'
+import gravatar from 'gravatar'
 import Db from 'instafap-db'
 import DbStub from './test/stub/db'
 import config from './config'
@@ -29,6 +30,10 @@ hash.set('GET /:username', async function getUser (req, res, params) {
   let username = params.username
   await db.connect()
   let user = await db.getUser(username)
+  user.avatar = gravatar.url(user.email)
+
+  let images = await db.getImagesByUser(username)
+  user.pictures = images
 
   delete user.email
   delete user.password
